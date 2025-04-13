@@ -92,15 +92,16 @@
       const jsonResult = document.getElementById("jsonResult");
 
       jsonBtn.addEventListener("click", () => {
-  fetch("http://localhost:8000/json")
-    .then(response => response.json())
-    .then(data => {
-      jsonResult.innerHTML = `<pre class='alert alert-info'>${JSON.stringify(data, null, 2)}</pre>`;
-    })
-    .catch(error => {
-      jsonResult.innerHTML = `<div class='alert alert-danger'>Error fetching data: ${error}</div>`;
-    });
-});
+        fetch("http://localhost:8000/json")
+            .then(response => response.json())
+            .then(data => {
+            jsonResult.innerHTML = `<pre class='alert alert-info'>${JSON.stringify(data, null, 2)}</pre>`;
+            })
+            .catch(error => {
+            jsonResult.innerHTML = `<div class='alert alert-danger'>Error fetching data: ${error}</div>`;
+            });
+      });
+      
       const postBtn = document.getElementById("postBtn");
       const postName = document.getElementById("postName");
       const postAge = document.getElementById("postAge");
